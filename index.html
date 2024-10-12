@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panificadora Bacanga</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Panificadora Bacanga</h1>
+
+        <div class="form-section">
+            <h2>Cadastro</h2>
+            <form id="productForm">
+                <label for="productName">Nome do Produto:</label>
+                <input type="text" id="productName" name="productName" required>
+
+                <label for="barcode">Código de Barras:</label>
+                <input type="text" id="barcode" name="barcode" required>
+
+                <label for="reference">Referência:</label>
+                <input type="text" id="reference" name="reference" required>
+
+                <label for="price">Valor:</label>
+                <input type="number" id="price" name="price" required>
+
+                <button type="button" onclick="addProduct()">Adicionar Produto</button>
+            </form>
+        </div>
+
+        <div class="search-section">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Pesquise aqui">
+                <button onclick="searchProduct()">🔍 Confirmar</button>
+                <button id="editButton" onclick="editProduct()" disabled>✏️ Alterar</button>
+                <button id="deleteButton" onclick="deleteProduct()" disabled>❌ Excluir</button>
+            </div>
+            <table id="productTable">
+                <thead>
+                    <tr>
+                        <th>Nome do Produto</th>
+                        <th>Código de Barras</th>
+                        <th>Referência</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Os produtos cadastrados aparecerão aqui -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
